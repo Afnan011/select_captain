@@ -1,5 +1,4 @@
 import 'dart:math';
-
 import 'constants.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +44,6 @@ class MyHomePageState extends State<MyHomePage> {
 
 
   void updateTextWithDelay() {
-
     setState(() {
       isLoading = true;
     });
@@ -89,8 +87,9 @@ class MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.black,
 
       body: SafeArea(
-        child: Center(
-          child: Expanded(
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Center(
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
@@ -120,7 +119,7 @@ class MyHomePageState extends State<MyHomePage> {
                   padding: const EdgeInsets.all(20),
                   decoration: const BoxDecoration(
                     image: DecorationImage(
-                      image: AssetImage("assets/logo2.jpg"),
+                      image: AssetImage("assets/logo.jpg"),
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -146,12 +145,16 @@ class MyHomePageState extends State<MyHomePage> {
 
                 ElevatedButton(
                   onPressed: isLoading ? null : updateTextWithDelay,
-                  child: const Text(
-                    'Find',
-                    style: TextStyle(
-                        fontSize: 20,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 1),
+                  child: const Padding(
+                    padding:  EdgeInsets.all(8.0),
+                    child: Text(
+                      'Find',
+                      style: TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 1
+                      ),
+                    ),
                   ),
                 ),
 
