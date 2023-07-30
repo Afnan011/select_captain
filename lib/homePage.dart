@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'package:select_captain/loading.dart';
 
 import 'constants.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -9,10 +8,10 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   List<Map<String, String>> currentList = [];
 
   String currentCaptain = 'Select Your Team Name';
@@ -93,15 +92,18 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Center(
           child: Expanded(
             child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+
+                const SizedBox(height: 80),
+
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Text(
-                    'Choose Your Captain',
+                    'Who is Lucky?',
                     style: TextStyle(
-                      fontSize: 24,
+                      fontSize: 28,
                       color: Colors.white,
                       letterSpacing: 2,
                       fontWeight: FontWeight.bold,
@@ -109,8 +111,11 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
+
+                const SizedBox(height: 10),
+
                 Container(
-                  height: 200,
+                  height: 300,
                   width: double.infinity,
                   padding: const EdgeInsets.all(20),
                   decoration: const BoxDecoration(
@@ -120,10 +125,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
                 ),
+
+
                 Text(
                   currentCaptain,
                   style: const TextStyle(
-                      fontSize: 22,
+                      fontSize: 24,
                       fontWeight: FontWeight.bold,
                       color: Colors.white),
                 ),
@@ -135,14 +142,14 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
 
-                const SizedBox(height: 20),
+                const SizedBox(height: 40),
 
                 ElevatedButton(
                   onPressed: isLoading ? null : updateTextWithDelay,
                   child: const Text(
-                    'Choose Captain',
+                    'Find',
                     style: TextStyle(
-                        fontSize: 18,
+                        fontSize: 20,
                         fontWeight: FontWeight.w500,
                         letterSpacing: 1),
                   ),
@@ -167,11 +174,13 @@ class _MyHomePageState extends State<MyHomePage> {
                   borderRadius: BorderRadius.circular(5),
                   selectedColor: Colors.white,
                   selectedBorderColor: Colors.white70,
+                  fillColor: Colors.blue.shade600,
+
                   children: const [
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Text(
-                        'Team 1',
+                        'Stack',
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
                             letterSpacing: 1,
@@ -182,7 +191,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 16.0),
                       child: Text(
-                        'Team 2',
+                        'Queue',
                         style: TextStyle(
                             fontWeight: FontWeight.w500,
                             letterSpacing: 1,

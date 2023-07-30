@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.select_capain.select_captain">
    <application
-        android:label="select_captain"
+        android:label="Select Captain"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
